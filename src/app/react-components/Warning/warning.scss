@@ -1,0 +1,17 @@
+.warning {
+    margin: 0;
+    color: red;
+}
+
+// Following two elements will be transpiled and merged into:
+// ol, ul {
+//     margin: 0;
+// }
+
+ol {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}

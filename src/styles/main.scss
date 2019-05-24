@@ -1,0 +1,90 @@
+//
+// Main - the main SCSS file where all styles are imported
+//
+
+html {
+    display: grid;
+    font-family: sans-serif;
+    background-color: bisque;
+    background-repeat: repeat-x;
+    user-select: auto // To test if prefixes in css file are present
+}
+
+body {
+    // When referencing urls to hashed sources, the hash is added automatically by Webpack
+    background-image:
+        url('~img/gif/mario.gif'),
+        url('~img/png/mario.png'),
+        url('~img/jpg/mario.jpg');
+    // will produce in background-image: url('/img/gif/mario.abc123.gif'); etc
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+
+    &::after {
+        position: absolute;
+        top: 20px;
+        right: 2px;
+        width: 300px;
+        content: 'Test of background images in SCSS with hashes via alias URL';
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        color: black;
+    }
+}
+
+// Following two media queries will be transpiled and merged into:
+
+// @media (max-width: 768px) {
+//     html {
+//         color: red;
+//         line-height: 10;
+//     }
+// }
+
+@media (max-width: 768px) {
+    html {
+        color: red;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        line-height: 10;
+    }
+}
+
+// Test background SVG image with parameters
+.svg-test-icon-bg {
+    width: 100px;
+    height: 100px;
+    background-image:
+        // TODO | Using relative url for now
+        // PostCssInlineSvg (svg-load) does not support Webpack aliases yet - https:
+//github.com/TrySound/postcss-inline-svg/issues/46
+        svg-load(
+            '../img/svg/icon-pointer.svg',
+            fill=#fff
+        );
+    background-size: cover;
+}
+
+.svg-test-icon {
+    width: 100px;
+    height: 100px;
+    fill: #fff;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    src:
+        url('~fonts/eurostile.ttf') format('ttf'),
+        url('~fonts/eurostile.woff') format('woff');
+}
+
+.font-test {
+    font-family: 'Eurostile', sans-serif;
+}
