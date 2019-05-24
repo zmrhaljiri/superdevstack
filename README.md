@@ -75,9 +75,9 @@ The code should be self-documented with comments at proper places, however this 
 
     - **styles** - SASS files
 
-- **tpl** - React pages, layouts and components for HTML composition
+    - **tpl** - React pages, layouts and components for HTML composition
 - **webpack** - Webpack configuration for different environments
-- **<Root> files** - Configuration files can be written in different formats, the preferred file format in SuperDevStack is `.js` (`.babelrc.js`) before non-extension format (`.babelrc`) due ability to programmatically configure files and use comments in JS files
+- **Root files** - Configuration files can be written in different formats, the preferred file format in SuperDevStack is `.js` (`.babelrc.js`) before non-extension format (`.babelrc`) due ability to programmatically configure files and use comments in JS files
   - **.babelrc.js** - **Babel** config with presets, plugins and specific environment settings
   - **.browserslistrc** - **Target browsers** config shared by multiple tools like Babel, ESlint, Stylelint and more
     - **.eslintignore** - **ESlint** config for ignoring specific files and directories while linting
