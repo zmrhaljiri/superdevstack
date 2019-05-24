@@ -32,7 +32,7 @@ Templating languages like [Nunjucks](https://mozilla.github.io/nunjucks/) or [Ha
 
 ### Installation
 
-
+For now, simply clone the repository.
 
 ### Usage
 
