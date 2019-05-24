@@ -243,7 +243,7 @@ The main source file for all JavaScript logic is `src/app/index.js`. There all V
 I will highly appreciate any kind of help regarding SuperDevStack. If you are using it and missing some feature or experiencing nasty bug, please create an issue. Also, feel free to fork the repository and create pull requests for any existing issue.
 
 ## License
-I have no idea about licences. Really. Feel free to copy, edit and share the code anywhere you wish without creding the author.
+I have no idea about licences. Really. Feel free to copy, edit and share the code anywhere you wish without crediting the author.
 
 [![nps friendly][nps]][nps-url]
 
