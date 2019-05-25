@@ -1,5 +1,8 @@
+# Folders
+.vscode
 dist
 externals
 node_modules
-.vscode
+
+# Files
 package-lock.json
