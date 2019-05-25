@@ -1,11 +1,9 @@
 module.exports = {
-    setupFilesAfterEnv: [
-        // A list of paths to modules that run some code to configure or set up the testing framework before each test.
+    setupFilesAfterEnv: [ // A list of paths to modules that run some code to configure or set up the testing framework before each test.        
         'jest-dom/extend-expect',
         'react-testing-library/cleanup-after-each',
     ],
-    moduleNameMapper: {
-        // Mapping must match the Webpack aliases settings
+    moduleNameMapper: { // Mapping must match the Webpack aliases settings        
         '^img(.*)$': '<rootDir>/src/img$1',
         '^styles(.*)$': '<rootDir>/src/styles$1',
         '^fonts(.*)$': '<rootDir>/src/fonts$1',
@@ -14,8 +12,7 @@ module.exports = {
         '^utilities(.*)$': '<rootDir>/src/app/utilities$1',
         '^tpl(.*)$': '<rootDir>/src/app/tpl$1',
     },
-    transform: {
-        // Specify Jest transpilers
+    transform: { // Specify Jest transpilers        
         '^.+\\.js?$': 'babel-jest',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
             'jest-transform-stub',
