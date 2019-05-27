@@ -153,7 +153,20 @@ export default {
             // Fonts
             {
                 test: config.resources.FONTS,
-                use: ['file-loader'], // Support importing files
+                include: config.path.SRC,
+                exclude: config.path.EXT,
+                use: [
+                    {
+                        loader: 'file-loader', // Support importing files
+                        options: {
+                            name: config.IS_DEV
+                                ? `${config.path.FONTS_OUTPUT}/[name].[ext]`
+                                : `${
+                                      config.path.FONTS_OUTPUT
+                                  }/[name].[contenthash:6].[ext]`,
+                        },
+                    },
+                ],
             },
         ],
     },

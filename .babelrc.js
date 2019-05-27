@@ -1,5 +1,6 @@
 module.exports = {
-    presets: [ // Specify multiple plugins by using presets        
+    presets: [
+        // Specify multiple plugins by using presets
         [
             '@babel/preset-env', // Transpile latest JS features
             {
@@ -8,12 +9,14 @@ module.exports = {
         ],
         '@babel/preset-react', // Add support for jsx
     ],
-    plugins: [ // Specify single plugins        
+    plugins: [
+        // Specify single plugins
         'react-hot-loader/babel', // Add support for hot module replacement
         '@babel/plugin-proposal-class-properties', // Transform static class properties
         '@babel/plugin-syntax-dynamic-import', // Add support for dynamic imports
     ],
-    env: { // Specific environment settings        
+    env: {
+        // Specific environment settings
         production: {
             plugins: [
                 [

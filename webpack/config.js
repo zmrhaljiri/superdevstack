@@ -29,6 +29,7 @@ export default {
         APP_POLYFILLS_OUTPUT: 'js/polyfills',
         IMG_OUTPUT: 'img',
         CSS_OUTPUT: 'css',
+        FONTS_OUTPUT: 'fonts',
     },
     favicon: {
         LOGO: getPath('src/img/png/favicon.png'),

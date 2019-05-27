@@ -1,6 +1,6 @@
 {
     "name": "super-dev-stack",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Web development stack for front end developers. Made with ❤️ and 🍵.",
     "scripts": {
         "start": "nps"
