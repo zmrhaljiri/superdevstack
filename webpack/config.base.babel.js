@@ -12,9 +12,6 @@ import StyleLintPlugin from 'stylelint-webpack-plugin'
 import TimeFixPlugin from 'time-fix-plugin'
 import HtmlWebpackInlineSVGPlugin from './plugins/html-webpack-inline-svg-plugin' // TODO pending, check README in ./plugins folder.
 
-// TODO fix in dev:hot
-// import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
-
 import config from './config'
 
 // Dynamically generate html templates
@@ -174,7 +171,7 @@ export default {
         // Plugins
         new CleanPlugin({
             // Clean dist folder before build
-            cleanOnceBeforeBuildPatterns: ['**/*', '!externals/**'],
+            cleanOnceBeforeBuildPatterns: ['**/*'],
         }),
         new PolyfillInjectorPlugin({
             // Generate additional polyfills - babel-preset-env does not include all needed polyfills
@@ -190,19 +187,6 @@ export default {
             fix: config.IS_DEV,
         }),
         new TimeFixPlugin(), // Prevent unwanted compilation loops
-
-        // TODO fix in dev:hot
-        // new HtmlCriticalWebpackPlugin({
-        //     base: path.resolve(process.cwd(), 'dist'),
-        //     src: 'index.html',
-        //     dest: 'index.html',
-        //     inline: true,
-        //     minify: true,
-        //     extract: true,
-        //     penthouse: {
-        //         blockJSRequests: false,
-        //     }
-        // })
     ]
         // In order to apply multiple instances of a plugin, it's needed to .concat the method to the plugins array
         .concat(generateStaticTemplates())
@@ -220,9 +204,8 @@ export default {
             'react-components': config.alias.REACT_COMPONENTS,
             utilities: config.alias.UTILITIES,
             tpl: config.alias.TPL,
-            // TODO try Preact | Uncomment to get much smaller bundle
-            // 'react': 'preact-compat',
-            // 'react-dom': 'preact-compat'
+            react: 'preact/compat',
+            'react-dom': 'preact/compat',
         },
     },
 }

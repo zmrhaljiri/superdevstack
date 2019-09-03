@@ -21,7 +21,6 @@ module.exports = {
 
         build: run([
             // Build the assets (and templates) for production
-            'copy.externals',
             'format.check.config',
             'webpack.prod --env.patch',
             'test',
@@ -30,19 +29,16 @@ module.exports = {
             // Run the development server
             default: run([
                 // The default development server
-                'copy.externals',
                 'format.fix.config',
                 'webpack.dev',
             ]),
             hot: run([
                 // The dev server supporting HMR
-                'copy.externals',
                 'format.fix.config',
                 'webpack.dev --hot',
             ]),
             prod: run([
                 // The dev server with production settings (for testing production build)
-                'copy.externals',
                 'format.fix.config',
                 'webpack.dev.withProdConfig',
             ]),
@@ -107,10 +103,6 @@ module.exports = {
         },
         test: {
             default: 'jest',
-        },
-        copy: {
-            // Copy files from source to destination
-            externals: 'copyfiles externals/**/* dist', // Copy everything from externals folder to dist
         },
         webpack: {
             // Run production build

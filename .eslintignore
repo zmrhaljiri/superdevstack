@@ -1,7 +1,6 @@
 # Folders
 .vscode
 dist
-externals
 node_modules
 
 # Files

@@ -4,6 +4,7 @@ module.exports = {
         [
             '@babel/preset-env', // Transpile latest JS features
             {
+                corejs: 2,
                 useBuiltIns: 'usage', // Automatic polyfill import - only when features that needs to be polyfilled are used in the code
             },
         ],

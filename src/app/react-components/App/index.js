@@ -5,29 +5,19 @@
 // - Rendering images in JS
 // - HMR
 
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { hot } from 'react-hot-loader'
-import Loadable from 'react-loadable'
 
 import star from 'img/svg/icon-star.svg'
 
 // Lazy components
 
-const Warning = Loadable({
-    loader: () =>
-        import(/* webpackChunkName: "Warning" */ 'react-components/Warning'),
-    loading() {
-        return <div>Loading......</div>
-    },
-})
-
-const User = Loadable({
-    loader: () =>
-        import(/* webpackChunkName: "User" */ 'react-components/User'),
-    loading() {
-        return <div>Loading......</div>
-    },
-})
+const Warning = lazy(() =>
+    import(/* webpackChunkName: "Warning" */ 'react-components/Warning')
+)
+const User = lazy(() =>
+    import(/* webpackChunkName: "User" */ 'react-components/User')
+)
 
 class App extends React.Component {
     state = {
@@ -88,13 +78,19 @@ class App extends React.Component {
                 <button onClick={this.decrement}>-</button>
                 <br />
                 {/* Conditionally render the lazy component */}
-                {count > 3 && <Warning name="Mario" />}{' '}
+                {count > 3 && (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Warning name="Mario" />
+                    </Suspense>
+                )}{' '}
                 <p>Example of rendering an image in React component</p>
                 <img src={star} alt="ahoj" />
                 <p>Test the fetch API</p>
                 <button onClick={this.testFetchApi}>Test fetch API</button>
                 <p>Rendering of functional React component</p>
-                <User name="John" />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <User name="John" />
+                </Suspense>
                 <h2 className="font-test">
                     Test of heading with Eurostile font
                 </h2>

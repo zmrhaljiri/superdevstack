@@ -1,8 +1,8 @@
 module.exports = {
     setupFilesAfterEnv: [
         // A list of paths to modules that run some code to configure or set up the testing framework before each test.
-        'jest-dom/extend-expect',
-        'react-testing-library/cleanup-after-each',
+        '@testing-library/jest-dom/extend-expect',
+        '@testing-library/react/cleanup-after-each',
     ],
     moduleNameMapper: {
         // Mapping must match the Webpack aliases settings
