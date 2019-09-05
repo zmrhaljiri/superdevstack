@@ -25,6 +25,7 @@ Templating languages like [Nunjucks](https://mozilla.github.io/nunjucks/) or [Ha
 - [Mock REST API server](https://github.com/jaywcjlove/mocker-api)
 - JavaScript testing with [Jest](https://jestjs.io/)
 - Git hooks with [Husky](https://github.com/typicode/husky)
+- Reduced bundle size by using [Preact](https://preactjs.com/)
 - **Assets optimization**
 - and much more
 
@@ -234,7 +235,7 @@ The main source file for all JavaScript logic is `src/app/index.js`. There all V
     Jest is used for JavaScript testing. In `src/app/react-components/App/App.spec.js` you can find a very simple example how to use it.
 - **Lazy loading**
 
-    It's a good practice to load a React component only at time when you really need it. SuperDevStack uses React-loadable to lazy load the components, check `src/app/react-components/App/index.js` for the use case.
+    It's a good practice to load a React component only at time when you really need it. SuperDevStack uses React's native `lazy` method to lazy load the components, check `src/app/react-components/App/index.js` for the use case.
 - **Linting, prettifying**
 
     ESlint and Prettier are used to keep your scripts well-formatted and syntax-error-free.
@@ -243,7 +244,7 @@ The main source file for all JavaScript logic is `src/app/index.js`. There all V
 I will highly appreciate any kind of help regarding SuperDevStack. If you are using it and missing some feature or experiencing nasty bug, please create an issue. Also, feel free to fork the repository and create pull requests for any existing issue.
 
 ## License
-I have no idea about licences. Really. Feel free to copy, edit and share the code anywhere you wish without crediting the author.
+MIT. I have no idea about licences. Really. Feel free to copy, edit and share the code anywhere you wish without crediting the author.
 
 [![nps friendly][nps]][nps-url]
 
