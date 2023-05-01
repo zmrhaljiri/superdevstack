@@ -47,7 +47,7 @@
         "babel-plugin-dynamic-import-node": "^2.3.0",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-        "browser-sync": "^2.26.7",
+        "browser-sync": "^2.29.1",
         "browser-sync-webpack-plugin": "^2.2.2",
         "clean-webpack-plugin": "^2.0.2",
         "core-js": "^2.6.9",
